@@ -1,8 +1,27 @@
-﻿.landing-main {
-    background-color: #F0F4EF;
-}
-
-
+﻿
 .hero-content__title, .hero-content__second-title {
     text-align: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    padding-block: 5rem;
+    justify-content: space-between;
+}
+
+.landing-main {
+    height: 200px;
+    position: relative;
+}
+
+.search-button {
+    margin: auto 0 0;
+    position: absolute;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.top-area {
+    justify-content: center;
 }
