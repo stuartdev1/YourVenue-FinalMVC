@@ -1,0 +1,4 @@
+﻿#ListVenueForm {
+    display: flex;
+    flex-direction: column;
+}
