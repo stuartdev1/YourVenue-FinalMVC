@@ -22,6 +22,10 @@ namespace YourVenue_Final.Controllers
         {
             return View();
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
         public IActionResult About()
         {
             return View();
