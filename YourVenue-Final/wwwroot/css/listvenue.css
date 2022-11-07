@@ -1,4 +1,8 @@
 ﻿#ListVenueForm {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-inline: 15%;
+    
 }

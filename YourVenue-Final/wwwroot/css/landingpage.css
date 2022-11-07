@@ -1,6 +1,7 @@
-﻿
-.hero-content__title, .hero-content__second-title {
-    text-align: center;
+﻿.hero-content{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .info {
@@ -15,17 +16,10 @@
     position: relative;
 }
 
-.search-button {
-    margin: auto 0 0;
-    position: absolute;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
 .landing-main {
     justify-items: center;
 }
 
-.top-area {
-    justify-content: center;
+#search-button {
+    background-color: red;
 }
