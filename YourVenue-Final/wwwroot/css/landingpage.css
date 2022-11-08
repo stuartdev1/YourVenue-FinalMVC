@@ -1,9 +1,14 @@
-﻿.hero-content{
+﻿.hero-content {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    text-align: center;
 }
 
+.hero-content-wrapper {
+    flex-direction: column;
+    
+}
 .info {
     display: flex;
     flex-direction: row;
@@ -18,8 +23,4 @@
 
 .landing-main {
     justify-items: center;
-}
-
-#search-button {
-    background-color: red;
 }
