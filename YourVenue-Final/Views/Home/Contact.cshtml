@@ -5,14 +5,21 @@
 <style>
     body {
         background-color: lightslategray;
+        text-align: center;
     }
 
     h1 {
         color: black;
+        text-align: center;
     }
 
     p {
         color: black;
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
     }
 </style>
 
@@ -25,15 +32,16 @@
 <form class="cf">
     <div class="half left cf">
         <input type="text" id="input-name" placeholder="Name">
-        <br />
+        <br /> <br />
         <input type="email" id="input-email" placeholder="Email address">
-        <br />
+        <br /> <br />
         <input type="text" id="input-subject" placeholder="Subject">
-        <br />
+        <br /> <br />
     </div>
     <div class="half right cf">
         <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
     </div>
+    <br />
     <input type="submit" value="Submit" id="input-submit">
 </form>
 <br />
