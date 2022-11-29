@@ -17,6 +17,7 @@ namespace YourVenue_Final.Models
         {
         }
 
+        public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Host> Hosts { get; set; }
@@ -34,6 +35,29 @@ namespace YourVenue_Final.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Contact>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToTable("Contact");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Message)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Subject)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.Property(e => e.AddressLine1).HasMaxLength(500);
