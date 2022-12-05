@@ -11,6 +11,41 @@ namespace YourVenue_Final.Controllers
     public class VenueController : Controller
     {
         [HttpGet]
+        public IActionResult Search()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Search(Microsoft.AspNetCore.Http.IFormCollection formColl)
+        {
+
+            string VenueName = formColl["VenueName"];
+            string VenuePhone = formColl["VenuePhone"];
+
+
+            DemoContext demoContext = new DemoContext();
+            List<Venue> searchVenues = new List<Venue>();
+
+            if (!string.IsNullOrEmpty(VenueName))
+            {
+                searchVenues = demoContext.Venues.Where(x => x.VenueName.ToString() == VenueName).ToList();
+            }
+            else
+            if (!string.IsNullOrEmpty(VenuePhone))
+            {
+                searchVenues = demoContext.Venues.Where(x => x.VenuePhone.ToString() == VenuePhone).ToList();
+            }
+   
+            else
+            {
+                ViewData["ErrorMessage"] = new List<string> { "showing the list of all venues, no search criteria was selected" };
+                searchVenues = demoContext.Venues.ToList();
+            }
+            return View(searchVenues);
+        }
+
+        [HttpGet]
         public ActionResult ListVenue(string ID)
         {
             DemoContext demoContext = new DemoContext();
