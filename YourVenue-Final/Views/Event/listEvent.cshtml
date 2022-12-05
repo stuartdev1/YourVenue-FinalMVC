@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "List Event";
+}
+
+@model YourVenue_Final.Models.Event;
+
+<head>
+    <link rel="stylesheet" href="~/css/listevent.css" />
+</head>
+<main>
+    <h1>List YourEvent</h1>
+    <form id="ListEventForm">
+        <label for="EventName">Event Name</label>
+        <input name="EventName" id="EventName"
+               placeholder="Enter the event name" type="text"
+               maxlength="30"
+               value="@Model.EventName"
+               class="form-control">
+
+        <label for="EventDate">Event Date</label>
+        <input name="EventDate" id="EventDate"
+               placeholder="Enter your venue's event date" type="text"
+               maxlength="30"
+               value="@Model.EventDate"
+               class="form-control">
+
+
+
+        <button type="submit" class="btn btn-primary btn-lg" id="SearchButton" name="AddButton" value="AddButton">Add</button>
+        <button type="submit" class="btn btn-warning btn-lg" id="SearchButton" name="UpdateButton" value="UpdateButton">Update</button>
+        <button type="submit" class="btn btn-danger btn-lg" id="SearchButton" name="DeleteButton" value="DeleteButton">Delete</button>
+    </form>
+
+</main>
