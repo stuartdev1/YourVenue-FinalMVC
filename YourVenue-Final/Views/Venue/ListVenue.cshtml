@@ -9,21 +9,43 @@
     <h1>List YourVenue</h1>
     <form id="ListVenueForm">
         <label for="VenueName">Venue Name</label>
-        <input type="text" id="VenueName" placeholder="Venue Name" />
+        <input name="VenueName" id="VenueName"
+               placeholder="Enter your first name" type="text"
+               maxlength="30"
+               value="@Model.VenueName"
+               class="form-control">
 
         <label for="VenuePhone">Venue Phone</label>
-        <input type="text" id="VenuePhone" placeholder="Venue Phone" />
+        <input name="VenuePhone" id="VenuePhone"
+               placeholder="Enter your venue's phone" type="text"
+               maxlength="30"
+               value="@Model.VenuePhone"
+               class="form-control">
 
         <label for="VenueAddress">Venue Address</label>
-        <input type="text" id="VenueAddress" placeholder="Venue Address" />
+        <input name="VenueAddress" id="VenueAddress"
+               placeholder="Enter your address" type="text"
+               maxlength="30"
+               value="@Model.VenueAddress"
+               class="form-control">
 
         <label for="VenueCity">Venue City</label>
-        <input type="text" id="VenueCity" placeholder="Venue City" />
+        <input name="VenueCity" id="VenueCity"
+               placeholder="Enter your city" type="text"
+               maxlength="30"
+               value="@Model.VenueCity"
+               class="form-control">
 
         <label for="VenueState">Venue State</label>
-        <input type="text" id="VenueState" placeholder="Venue State" />
+        <input name="VenueState" id="VenueState"
+               placeholder="Enter your state" type="text"
+               maxlength="30"
+               value="@Model.VenueState"
+               class="form-control">
 
-        <button>Submit Venue</button>
+        <button type="submit" class="btn btn-primary btn-lg" id="SearchButton" name="AddButton" value="AddButton">Add</button>
+        <button type="submit" class="btn btn-warning btn-lg" id="SearchButton" name="UpdateButton" value="UpdateButton">Update</button>
+        <button type="submit" class="btn btn-danger btn-lg" id="SearchButton" name="DeleteButton" value="DeleteButton">Delete</button>
     </form>
 
 </main>
