@@ -62,12 +62,63 @@ namespace YourVenue_Final.Controllers
             {
                 ViewData["ErrorMessage"] = new List<string> { "Please enter message in the box" };
             }
+            else
+            {
+                NewContact.Name = Name;
+                NewContact.Email = Email;
+                NewContact.Subject = Subject;
+                NewContact.Message = Message;
+                
+
+
+
+
+                if (!string.IsNullOrEmpty(AddButton))
+                {
+                    AddContact(NewContact);
+                }
+                else
+                if (!string.IsNullOrEmpty(UpdateButton))
+                {
+                    UpdateContact(NewContact);
+                }
+                else
+                if (!string.IsNullOrEmpty(DeleteButton))
+                {
+                    DeleteContact(NewContact);
+                }
+            }
             return View();
         }
 
-        public IActionResult Index()
+        public Contact AddContact(Contact NewContact)
         {
-            return View();
+ 
+            DemoContext demoContext = new DemoContext();
+            demoContext.Contacts.Add(NewContact);
+            demoContext.SaveChanges();
+            ViewData["SuccessMessage"] = new List<string> { "Customer added successfully" };
+            return NewContact;
+        }
+
+        public Contact UpdateContact(Contact NewContact)
+        {
+            DemoContext demoContext = new DemoContext();
+            demoContext.Contacts.Update(NewContact);
+            demoContext.SaveChanges();
+            ViewData["SuccessMessage"] = new List<string> { "Customer updated successfully" };
+            return NewContact;
+        }
+
+        public Contact DeleteContact(Contact NewContact)
+        {
+            DemoContext demoContext = new DemoContext();
+            demoContext.Contacts.Remove(NewContact);
+            demoContext.SaveChanges();
+            ViewData["SuccessMessage"] = new List<string> { "Customer deleted successfully" };
+            return NewContact;
         }
     }
 }
+
+
