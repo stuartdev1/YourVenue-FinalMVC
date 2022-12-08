@@ -30,9 +30,9 @@ namespace YourVenue_Final.Controllers
         {
             return View();
         }
-
         public IActionResult Registration()
         {
+
             return View();
         }
 
