@@ -7,6 +7,7 @@ using YourVenue_Final.Models;
 
 namespace YourVenue_Final.Controllers
 {
+    
     public class ContactController : Controller
     {
 

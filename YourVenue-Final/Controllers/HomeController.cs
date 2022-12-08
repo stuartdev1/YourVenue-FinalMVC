@@ -168,6 +168,7 @@ namespace YourVenue_Final.Controllers
         }
         public IActionResult Registration()
         {
+
             return View();
         }
 
