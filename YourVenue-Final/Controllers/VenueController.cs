@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,11 +9,13 @@ using YourVenue_Final.Models;
 
 namespace YourVenue_Final.Controllers
 {
+    [Authorize]
     public class VenueController : Controller
     {
         [HttpGet]
         public IActionResult Search()
         {
+            
             return View();
         }
 

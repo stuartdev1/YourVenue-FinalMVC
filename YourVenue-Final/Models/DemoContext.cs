@@ -80,9 +80,15 @@ namespace YourVenue_Final.Models
 
                 entity.Property(e => e.LastActivityUserID).HasMaxLength(50);
 
+                entity.Property(e => e.Password).HasMaxLength(50);
+
                 entity.Property(e => e.Phone).HasMaxLength(15);
 
+                entity.Property(e => e.Role).HasMaxLength(50);
+
                 entity.Property(e => e.State).HasMaxLength(50);
+
+                entity.Property(e => e.Username).HasMaxLength(50);
 
                 entity.Property(e => e.Zip).HasMaxLength(15);
             });
