@@ -126,16 +126,7 @@ namespace YourVenue_Final.Controllers
                 {
                     AddCustomer(NewCustomer);
                 }
-                else
-                if (!string.IsNullOrEmpty(UpdateButton))
-                {
-                    UpdateCustomer(NewCustomer);
-                }
-                else
-                if (!string.IsNullOrEmpty(DeleteButton))
-                {
-                    DeleteCustomer(NewCustomer);
-                }
+               
             }
             return View();
         }
