@@ -137,6 +137,11 @@ namespace YourVenue_Final.Controllers
 
         public Customer AddCustomer(Customer NewCustomer)
         {
+            NewCustomer.CustomerID = 0;
+            DemoContext demoContext = new DemoContext();
+            demoContext.Customers.Add(NewCustomer);
+            demoContext.SaveChanges();
+            ViewData["SuccessMessage"] = new List<string> { "Event added successfully" };
             return NewCustomer;
         }
         public Event AddEvent(Event NewEvent)
