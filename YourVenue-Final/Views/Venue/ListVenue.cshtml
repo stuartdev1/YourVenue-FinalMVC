@@ -7,47 +7,56 @@
 <head>
     <link rel="stylesheet" href="~/css/listvenue.css" />
 </head>
-<main>
-    <h1>List YourVenue</h1>
-    <form id="ListVenueForm">
-        <label for="VenueName">Venue Name</label>
-        <input name="VenueName" id="VenueName"
-               placeholder="Enter your first name" type="text"
-               maxlength="30"
-               value="@Model.VenueName"
-               class="form-control">
+<div class="content-wrapper">
+    <img class="sky-image" src="https://img.freepik.com/free-photo/white-cloud-sky-background_74190-4646.jpg?w=2000" />
+    <form class="list-venue-form">
+        <h1>List YourVenue</h1>
+        <div class="form-containter">
+            <label for="VenueName">Venue Name</label>
+            <input name="VenueName" id="VenueName"
+                   placeholder="Enter your venue name" type="text"
+                   maxlength="30"
+                   value="@Model.VenueName"
+                   class="form-control">
+        </div>
+        <div class="form-containter">
+            <label for="VenuePhone">Venue Phone</label>
+            <input name="VenuePhone" id="VenuePhone"
+                   placeholder="Enter your venue phone" type="text"
+                   maxlength="30"
+                   value="@Model.VenuePhone"
+                   class="form-control">
+        </div>
+        <div class="form-containter">
+            <label for="VenueAddress">Venue Address</label>
+            <input name="VenueAddress" id="VenueAddress"
+                   placeholder="Enter your address" type="text"
+                   maxlength="30"
+                   value="@Model.VenueAddress"
+                   class="form-control">
+        </div>
+        <div class="form-containter">
+            <label for="VenueCity">Venue City</label>
+            <input name="VenueCity" id="VenueCity"
+                   placeholder="Enter your city" type="text"
+                   maxlength="30"
+                   value="@Model.VenueCity"
+                   class="form-control">
+        </div>
+        <div class="form-containter">
+            <label for="VenueState">Venue State</label>
+            <input name="VenueState" id="VenueState"
+                   placeholder="Enter your state" type="text"
+                   maxlength="30"
+                   value="@Model.VenueState"
+                   class="form-control">
 
-        <label for="VenuePhone">Venue Phone</label>
-        <input name="VenuePhone" id="VenuePhone"
-               placeholder="Enter your venue's phone" type="text"
-               maxlength="30"
-               value="@Model.VenuePhone"
-               class="form-control">
-
-        <label for="VenueAddress">Venue Address</label>
-        <input name="VenueAddress" id="VenueAddress"
-               placeholder="Enter your address" type="text"
-               maxlength="30"
-               value="@Model.VenueAddress"
-               class="form-control">
-
-        <label for="VenueCity">Venue City</label>
-        <input name="VenueCity" id="VenueCity"
-               placeholder="Enter your city" type="text"
-               maxlength="30"
-               value="@Model.VenueCity"
-               class="form-control">
-
-        <label for="VenueState">Venue State</label>
-        <input name="VenueState" id="VenueState"
-               placeholder="Enter your state" type="text"
-               maxlength="30"
-               value="@Model.VenueState"
-               class="form-control">
-
-        <button type="submit" class="btn btn-primary btn-lg" id="SearchButton" name="AddButton" value="AddButton">Add</button>
-        <button type="submit" class="btn btn-warning btn-lg" id="SearchButton" name="UpdateButton" value="UpdateButton">Update</button>
-        <button type="submit" class="btn btn-danger btn-lg" id="SearchButton" name="DeleteButton" value="DeleteButton">Delete</button>
+        </div>
+        <div class="button-containter">
+            <button type="submit" class="btn btn-primary btn-lg" id="SearchButton" name="AddButton" value="AddButton">Add</button>
+            <button type="submit" class="btn btn-warning btn-lg" id="SearchButton" name="UpdateButton" value="UpdateButton">Update</button>
+            <button type="submit" class="btn btn-danger btn-lg" id="SearchButton" name="DeleteButton" value="DeleteButton">Delete</button>
+        </div>
     </form>
 
-</main>
+</div>

@@ -20,12 +20,12 @@ namespace YourVenue_Final.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
             return View();
         }
-
+        
         public IActionResult NotAuthorized()
         {
             return View();

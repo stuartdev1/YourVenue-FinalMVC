@@ -1,0 +1,25 @@
+﻿.search-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+
+.search-criteria {
+    width: 40%;
+    justify-content: space-between;
+}
+
+.search-criteria > * {
+    margin-block: 8px 8px;
+}
+
+.wedding-ring {
+    position: absolute;
+    right: 0;
+    top: 57px;
+    height: 80%;
+    width: 50%;
+    float: right;
+    -webkit-mask-image: -webkit-gradient(linear, right top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}

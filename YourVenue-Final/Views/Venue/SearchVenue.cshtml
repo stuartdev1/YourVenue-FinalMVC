@@ -5,80 +5,51 @@
 
 @model YourVenue_Final.Models.Venue;
 
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Search <small>Preview</small>
-        </h1>
-
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-        <div class="row">
-            <form id="SearchForm" method="post" action="" novalidate="novalidate">
-                <div class="col-md-12">
-                    <!-- general form elements -->
-                    <div class="box box-danger">
-                        <div class="box-header">
-                            <h3 class="box-title">Venue Search</h3>
-                        </div>
-                        <div class="box-body">
-                            @if (ViewData["ErrorMessage"] != null)
-                            {
-                            List<string>
-                                errorList = ViewData["ErrorMessage"] as List<string>
-                                    ;
-                                    if (errorList.Count() > 0)
-                                    {
-                                    <div class="alert alert-danger" role="alert" style="width:100%;">
-                                        <ul>
-                                            @foreach (var currentError in errorList)
-                                            {
-                                            <li>@currentError</li>
-                                            }
-                                        </ul>
-                                    </div>
-                                    }
-                                    }
-                                    <div class="row">
-                                        <div class="col-xs-3">
-                                            <label for="VenueName">Venue Name</label>
-                                            <input type="text" class="form-control" name="VenueName" id="VenueName" placeholder="Search Venue Name">
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <label for="VenueCity">Venue City</label>
-                                            <input type="text" class="form-control" name="VenueCity" id="VenueCity" placeholder="Search Venue City">
-                                        </div>
-                                    </div>
-                        </div>
-                        <div class="box-footer">
-
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg" id="SearchButton" name="SearchButton" value="SearchButton">Search</button>
-                            </div>
-
-                        </div>
-                    </div>
+<head>
+    <link rel="stylesheet" href="~/css/search-venue.css" />
+</head>
+<div class="search-content-wrapper">
+    <h1>
+        Venue Search
+    </h1>
+    <form id="SearchForm" method="post" action="" novalidate="novalidate">
+        @if (ViewData["ErrorMessage"] != null)
+        {
+            List<string>
+                errorList = ViewData["ErrorMessage"] as List<string>
+                    ;
+            if (errorList.Count() > 0)
+            {
+                <div class="alert alert-danger" role="alert" style="width:100%;">
+                    <ul>
+                        @foreach (var currentError in errorList)
+                        {
+                            <li>@currentError</li>
+                        }
+                    </ul>
                 </div>
-            </form>
+            }
+        }
+        <div class="search-criteria">
+            <label for="VenueName">Venue Name</label>
+            <input type="text" class="form-control" name="VenueName" id="VenueName" placeholder="Search Venue Name">
+            <label for="VenueCity">Venue City</label>
+            <input type="text" class="form-control" name="VenueCity" id="VenueCity" placeholder="Search Venue City">
+            <button type="submit" class="btn btn-primary btn-lg" id="SearchButton" name="SearchButton" value="SearchButton">Search</button>
         </div>
+    </form>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Search Results</h3>
-                        <div class="box-tools">
-                            <div class="input-group">
-                                <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search" />
-                                <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
+    <h3 class="box-title">Search Results</h3>
+
+
+    <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search" />
+    <div class="input-group-btn">
+        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+    </div>
 
 
 
@@ -87,36 +58,30 @@
 
 
 
-                    @if (Model == null)
-                    {
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="position-relative form-group">
-                                <p>No result match search criteria</p>
-                            </div>
-                        </div>
-                    </div>
-                    }
-                    else
-                    {
-                    <div class="box-body table-responsive no-padding">
-                        <table class="table table-hover">
-                            <tr>
-                                <th>ID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Phone</th>
-                                <th>Address</th>
-                                <th>Email</th>
-                                <th>Date Joined</th>
-                                <th>Profle</th>
-                            </tr>
-                        </table>
-                    </div>
-                    }
-                </div>
-            </div>
-        </div>
-    </section>
+
+
+
+    @if (Model == null)
+    {
+
+        <p>No result match search criteria</p>
+    }
+    else
+    {
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Date Joined</th>
+                <th>Profle</th>
+            </tr>
+        </table>
+    }
 </div>
+<img class="wedding-ring" src="https://cdn0.hitched.co.uk/article/9986/3_2/1280/jpg/56899-5-bf87217.webp" />
+
 

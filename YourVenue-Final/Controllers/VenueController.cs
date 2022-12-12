@@ -9,18 +9,18 @@ using YourVenue_Final.Models;
 
 namespace YourVenue_Final.Controllers
 {
-    [Authorize]
+    
     public class VenueController : Controller
     {
         [HttpGet]
-        public IActionResult Search()
+        public IActionResult SearchVenue()
         {
             
             return View();
         }
 
         [HttpPost]
-        public async Task<ActionResult> Search(Microsoft.AspNetCore.Http.IFormCollection formColl)
+        public async Task<ActionResult> SearchVenue(Microsoft.AspNetCore.Http.IFormCollection formColl)
         {
 
             string VenueName = formColl["VenueName"];

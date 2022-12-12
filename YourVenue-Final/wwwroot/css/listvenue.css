@@ -1,8 +1,22 @@
-﻿#ListVenueForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    padding-inline: 15%;
-    
+﻿.content-wrapper {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.list-venue-form {
+    position: absolute;
+    top: 10%;
+    left: 38%;
+}
+
+.list-venue-form > * {
+    margin-block: 15px 8px;
+}
+
+.sky-image {
+    width: 100%;
+    height: 50%;
+    opacity: 0.5;
 }
