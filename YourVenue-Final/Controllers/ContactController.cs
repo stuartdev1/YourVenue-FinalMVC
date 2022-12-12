@@ -11,22 +11,11 @@ namespace YourVenue_Final.Controllers
     public class ContactController : Controller
     {
 
-        [HttpGet]
-        public ActionResult NewContact(string ID)
+       
+        public ActionResult Contact()
         {
-            DemoContext demoContext = new DemoContext();
-            Contact searchContacts = new Contact();
-
-            if (!string.IsNullOrEmpty(ID))
-            {
-                searchContacts = demoContext.Contacts.Where(x => x.Email.ToString() == ID).FirstOrDefault();
-            }
-            if (searchContacts == null)
-            {
-                ViewData["ErrorMessage"] = new List<string> { "Message can not be sent, please try again later" };
-                searchContacts = new Contact();
-            }
-            return View(searchContacts);
+            
+            return View();
         }
 
         [HttpPost]
@@ -94,11 +83,10 @@ namespace YourVenue_Final.Controllers
 
         public Contact AddContact(Contact NewContact)
         {
- 
             DemoContext demoContext = new DemoContext();
             demoContext.Contacts.Add(NewContact);
             demoContext.SaveChanges();
-            ViewData["SuccessMessage"] = new List<string> { "Customer added successfully" };
+            ViewData["SuccessMessage"] = new List<string> { "Contact added successfully" };
             return NewContact;
         }
 
@@ -107,7 +95,7 @@ namespace YourVenue_Final.Controllers
             DemoContext demoContext = new DemoContext();
             demoContext.Contacts.Update(NewContact);
             demoContext.SaveChanges();
-            ViewData["SuccessMessage"] = new List<string> { "Customer updated successfully" };
+            ViewData["SuccessMessage"] = new List<string> { "Contact updated successfully" };
             return NewContact;
         }
 
